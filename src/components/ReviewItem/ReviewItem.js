@@ -1,12 +1,22 @@
 import React from 'react';
 
 const ReviewItem = (props) => {
-    const{name, quantity} = props.product;
+    const{name, quantity, key ,  img, seller, price} = props.product;
     return (
-        <div>
-            <h4>{name}</h4>
+        <div className="product">
+            <div > 
+                <img src={img} alt=""/>
+            </div>
+            <div>
+            <h3 style={{fontWeight: 'bold'}} className="product-name">{name}</h3>
              <p>Quantity: {quantity}</p>
-             <button className="buy-btn">Remove</button>
+             <p  style={{color:'dimgrey'}}><small>By {seller}</small></p>
+             <br/>
+             <h2>${`${price} X ${quantity} = $${parseFloat(price)*parseFloat(quantity)}`}</h2>
+             
+             <br/>
+             <button onClick={() => props.removeProduct(key)} className="buy-btn">Remove</button>
+             </div>
         </div>
     );
 };
