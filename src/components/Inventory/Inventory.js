@@ -1,9 +1,34 @@
 import React from 'react';
+import './Inventory.css';
+
+
 
 const Inventory = () => {
+    const handleAddProduct = () => {
+        const product = {}
+        
+        fetch('https://polar-island-12130.herokuapp.com/addProduct', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(product)
+            
+        })
+        
+
+    }
+
     return (
         <div>
-            <p>Inventory coming soon</p>
+            <form action="">
+                    <p><span>Name</span><input type="text"/></p>
+                    <p><span>Price :</span><input type="text"/></p>
+                    <p><span>Quantity :</span><input type="text"/></p>
+                    <p><span>Product Image</span><input type="file"/></p>
+                <button onClick={handleAddProduct}>Add Product</button>
+            </form>
+            
         </div>
     );
 };

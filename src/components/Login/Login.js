@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 import { initializeLoginFramework, handleGoogleSignIn, handleSignOut,  createUserWithEmailAndPassword, signInWithEmailAndPassword } from './LoginManager';
-
+import './Login.css';
 
 
 function Login() {
